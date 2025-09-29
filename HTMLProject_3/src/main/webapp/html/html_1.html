@@ -1,0 +1,187 @@
+<!-- 
+  1) 글자 관련 태그
+     h1~h6 (h1,h3) => 제목
+     br / p => 줄바꿈
+     출력된 형태 그대로 출력 : pre(내용보기)
+     strong, b : 강조체(두꺼운 글씨)
+     sup : 위 첨자
+  2) 목록 태그
+     ul / ol / dl / table - tr - th/td
+      |    |li  |dt/dd  
+     li(list item) => 데이터 출력
+  3) 멀티미디어 태그
+     img : 이미지 출력
+     embed : 동영상 출력
+     iframe : 다른 파일을 첨부
+     --------------------- 속성 : src
+  4) 링크 태그 : 다른 파일로 이동
+     a => href
+  5) 입력창 태그 : input / textarea / select
+  6) 화면 분할 : div / span
+  7) 템플릿 : header / section / footer / nav / article
+  8) label / fieldset
+  
+    입력창 : 글쓰기, 검색, 로그인, 회원가입 ...
+           장바구니 => 수량
+    1. 입력창 : input 
+       => 속성
+          --- type(종류), name(자바에서 값을 받는다), size(입력 크기)
+          - type
+            1) text => <input type=text> 한 줄 문자열
+                       ID입력, 검색창, 주소
+            2) file => <input type=file>
+                       업로드
+            3) 버튼 종류
+               button / reset / submit / image / radio / check
+               <input type=button value="로그인">
+               -------------------------------- 기능이 없음 => 자바스크릡트 이용
+               <input type=reset value="취소">
+               <input type=submit value="전송">
+               -------------------------------
+               <input type=image> : submit
+               <button></button>
+               => 그룹으로 묶어서 사용
+               **<input type=radio name=sex checked>남자 
+                  => checked
+                 <input type=radio name=sex>여자
+                <input type=checkbox name=hobby>낚시
+                <input type=checkbox name=hobby>등산
+                <input type=checkbox name=hobby>게임
+                
+                => id, class : CSS/JavaScript
+                => name : Java => 입력값을 받는 경우 구분자
+                
+                이름:<input type=text name=name>
+                 => getParameter("name")
+                주소:<input type=text name=addr>
+                 => getParameter("addr")
+                전화:<input type=text name=phone>
+                 => getParameter("phone")
+            4) 날짜 => 달력
+               date => <input type=date size="20">
+            5) 비밀번호 입력
+               password => <input type=password size="10">
+            6) Spinner => 수량 계산
+               number => <input type=number max=100 min=1>
+            7) 슬라이더 => 볼륨 조절
+               range => <input type=range max=100 min=1>
+            8) HIDDEN
+               hidden => 데이터를 숨겨서 전송
+                         <input type=hidden>
+           ---------------------------------------------
+           textarea : 여러줄 출력
+           ------------------- <textarea></textarea>
+           콤보박스 : 한 개 선택
+                   <select>
+                   <option>값</option>
+                   </select>
+               
+                   
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border=1 bordercolor=black witdh=350>
+		<tr>
+		<td>한 줄 문자</td>
+		<td><input type=text size=20></td>
+		</tr>
+		<tr>
+		<td>비밀번호 입력</td>
+		<td><input type=password size=20></td>
+		</tr>
+		<tr>
+		<td>파일 선택창</td>
+		<td><input type=file size=20></td>
+		</tr>
+		<tr>
+		<td>달력</td>
+		<td><input type=date size=20></td>
+		</tr>
+		<tr>
+		<td>일반 버튼</td>
+		<td><input type=button value="로그인"></td>
+		</tr>
+		<tr>
+		<td>전송 버튼</td>
+		<td><input type=submit value="전송"></td>
+		</tr>
+		<tr>
+		<td>초기화 버튼</td>
+		<td><input type=reset value="취소"></td>
+		</tr>
+		<tr>
+		<td>이미지 버튼</td>
+		<td><input type=image src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIODg0ODRQQDQ0PDg0ODQ4NDQ8NDQ0QFREXFhURExMZKDQhGRslGxMTITMiJiotLjouFyszOTMsOSgtLisBCgoKDg0OGxAQGzcmICYvLystMC0wLS4tLi8rLS83MDctLy8vLTctLS0tLS0tLi0rLS4tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBBgcCA//EAD0QAAEDAgIFCgUDAwMFAAAAAAABAgMEERITBRUWIVMGIjFScZOio9HhFDJBUWGBkcGhsbIHI2I0QkNygv/EABoBAQADAQEBAAAAAAAAAAAAAAADBAUGAQL/xAAyEQEAAQMCAwcDAwMFAAAAAAAAAQIDEgQRFCFRBRMVMVJhoUFi8HGBkSKxwSMyQtHh/9oADAMBAAIRAxEAPwDuIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMXDzKC/YDKDF2AygxdgMoL9gMoMXYDKC/YDKC/YDKC/YDKDF2AygxdgMoL9gMoMXYDKC/YDKC/YDKC/YDKDF2AygxdgMoL9gMoLgyhkPQAAAAAAAAAAAAAFLp3lCyl5jf9ya3y35rPy5f4Lem0lV7n5QyO0e1qNJ/TTzr6dP1c80xy2cqqjpHyL1IObGn4Vej+5u2OzIiOUfy52u5rtVzrrxjp5fEf5Ua8q14Sr2y7/wCxcjQR1+EXh2/nX+fyxtWvC872HA+/weHfebVrwvO9hwPv8Hh33m1a8LzvYcD7/B4d95tWvC872HAx1+Dw77zateF53sOB9/g8O+82rXhed7Dgff4PDvvNq14Xnew4GOvweHfebVrwvO9hwPv8Hh33m1a8LzvYcD7/AAeHfebVrwvO9hwMdfg8O+82rXhed7DgY6/B4d95tWvC872HA+/weHfebVrwvO9hwPv8Hh33m1a8LzvYcDHX4PDvvNq14Xnew4H3+Dw77zateF53sOB9/g8O+82rXhed7DgY6/B4d95tWvC872HA+/weHfeynKteEvfew4COvweHff8An8rfRPLVWqiNkkhXdzZFxxL+Psn9Cre7NiY5xv8Ap5pKJ1um526946efxLoGhOUzZ1SOS0cq/LZeZJ/6/ZfwYWp0VVr+qOcf2b/Z3bFGonu7kY1/E/nRftkRSk23sAAAAAAAAAArOUWlEpKd8m7GvMiRfq9ej9t6/oWNNZ765FP0+ql2hquGsTX9fKP1cY03pB8jnMRVVXKqyvvznKvSlzrdPZppiJ2/Rx9ijee9r5zKmyS3kt5mSMjMyRkZmSMjMyRkZsZIyM2ckZGZkjIzMkZGZkjIzMkZGZkjIzMkZGZkjIzMkZGZkjIzMkZGZkjIzMkZGZkjIzMkZGZkjIzWmh610apG5VwX5i33sX6W/BWvWoqjdV1FqKv66fOHT9AaaWWNMS89vNf+fs79Tk9Zp+5ucvKfJ1XZesnU2N6v90cpbLTVOIqNJLQAAAAAAAABz/8A1Lq1SWni+jY3yKn0VXLZP8V/c2+ybfKqr9nNdvVzNVFH7ueLFfevSu9TeyZEVMZIye5GSMjN5dHb7DIyW3KfR0dPVOihTCxI4HIiuVy3dG1y71/KqVdHfquWsq557z/dc11FNq7jT5bQq8ktZKeS0odExfDrVVL5GRZ2QxkEbZJXvw4lVVcqI1LKhVu6ivvO6txG+2/PyW7Vqjuu9uTy325ItVSRZjUp3vkjdh3yRpG9qqu9qoiqi2+6KS0XK8JmuNp9pRV93nEUTvE9eT6aW0WlPVS06KrkjkwI9Usq/mx82dRNyzFyY+m76v24t35tRP12SJNBImkPgsS4fiGw5mFL2VUTFb9SONVM6fvtvpvskmxEanuN/rtukQaDpp5lpoJZ21F5Gsz6eNInuYiqqYmuVUvhXfYjq1d6iiLldMY8vKefP9ktNixcrm3RVOXPzjlyQdEaJbMk8krljggjSSVWMzJFu5Go1rb23qvSq2J9RqJt4xTG81co6INPai5lVVO0U85+svnX01OiMWmfK66uR7J4mMcy1rLiaqot/wCD6tV3d5i5EftKO7NnaJtzP7wmN0NDDHE+tkkY+ZiSRwU8TZJGxr8r3q5URL9NumxDOqu11TFmmNo5bzPLf2WO5tW6Ym9VMTPOIiOe3uiv0dGtRFFDJmxSPiakmWsbm43IiorV+qX+i2JYv1xamuqnaY35fohmmibsUUVbxO3P9Vm/QFM6d9JFPK2oSR8Lc6nakL5GuVuHE1yql1TpsVo1l+LcXaqIx8+U89lqdPYm5NqmucvLnHLdW6O0RmuqmvVWOgpqidUsi3dGnyL6li9qcKaZjnvMR/KtZtZzXE8sYmf4e9E6KjljqpZ3PZHTticqRMa97sb8FkRyonSqfU8v6iuiqmmiN5nfz9nunt0V0111ztFO3l7vdToiJad9TSySPbFJHHLHPC2J7cd8Lmq1VRehdx80am5FyLdynbfnG07+T6rtW5tTdtVTtE7TvG3m90miIPhW1NTJKzHNJC1sMTJPlai3W6p9zy5qbvezbtxE8t+cvq3as9zF25VMbztyhX11PEj0+HdI+PCl1mY2N2K63SyKu61ixaruTH+pERPsrXZtxV/pzMx7o+SSZIsjJGRmZIyMmz8lqhc1W9aPf2oqeqmN2rbjuoq6T/do9iVY6iqn6TH9m70NRZUOfdU2CnkugH2AAAAAAAA5r/qkzDU00i/K+FzE/wDh91/zQ3+x53oqp93Odt0f6lNXs1XJNTJz2ZkjIzMkZGaxodMVNNHlwSLGy6uw4I3b16VuqXK1zTWrlWVcc/3WbWvvWqcaKuX6QvOUen6mOpcyGW0eXCtkZE5LrG1Xb1T7qpT0mktVW96qee89erR7Q7QvUXsaKuW0dOjUkhNXJi5rnQjZmMetPNCzE60lPPJG1HoiJZ2GTmr9ejfuKWp7uatq6ZnpMf8AjR0dV2Kd7dcR1iZj/L56fZHmQuiSHNSNq1Hw3/TrLiVeZ9Oi17brnulzmiqKt9vpv57PnW3LcXKZo232/q28t/ZO0jo9lTVOqmTQNgle2R6yTNZLF0YmrH0q7ctrdJDavVWrXdTTO8cvLlP7rN23Tevd/TXGMzEzvPOP2R46psmlW1N0ZG6sbJieqNRGI/c5yr0bkuSzbqp0k2/rsgp1NFeui5vtGXwt6eplbO5Zp6L4VzpElRr6bMdCqrdqZaY72KdVuibe1NNWX77b/u0KL9cXJmu5Rhz35xvt+3NQaJjc2WR1LMymcl8vOekeYxV+RVXmr9Nyl+/MTREXKd+u30ll6aqrvKptVxT035bx+dUnTrGuhjzfhlrc12JaTBZYcP8A5cHNxYv6EWlmqK5x3w2+vX23Ta2unu4zxz3/AOPT32+rNbStrsqaOSJkqQxRTwzSthcjmNw4mK7crVREX8C1cnT70VUzMbzMTEb+b27FOrxroqiJ2iJiZ28unsgx0jYaqBMyORGywOfJG5VjauJFVMS9Nvv0E9VyblmqdpjlPL6qtONq/TGUTzjeY8l5HW0/xtQ5kcUUyyVDqerfM+SHNxKrXuaq4URd9l6EVUKM2r3cUxNUzHLenbadmjTqrHEVYxEVc9qpneN//VToRUYtasjkRX0NYxFc5Oe9yJZEX6qv4LepiZpoimPKqP4UtJeiKrmU+dNX8pHJp2CKuRj4opXxwJFnuiaxypLdyc/cu65HrIyqo3iZjnvtv09kvZ97Gi5EVREzEbbzHX3SNISq6jmjqpKeV+ON1K2ldErmvvZ7nJHzbYb9JHaoiL1NVqmYjnvvv/lLfvTOnqpvV0zPLHHbz99mdFSuShZHBLTRSJUyue2ofTouFWNRFRJPyn0F+mmb8zXTMxtHlv8A4e6a9VwsRbrpid533mPL91NpaF6yq6V8Mr3NRVdTuiczduROZuRdxc09VOG1MTEe+/8Aln6qqvvN66omZ6TG3whZJPkrZmSMjMyRkZp/JZL1LrdDI3/3RP5KHas7WNustvsaiZv5dIbnCtlObdS2LRz7ogFgAAAAAAABrXL/AEMtXRuWNMU8C5saJ0vRE5zE7U/qiF/s7URZvRl5TylR1+n761tHnHOHMdFzpK3D/wB7U6Pun3Oju0zTO/0cTqLc0Tv9E7JIclbMyRk8zMkZPczJGTzMyRkZmSMjMyhkZmSMjIyhkZmUMjMyRkZmSMjMyRkZGSMjMyRkZmUMjMyhkZGUMjMyhkZmUMjMyRk9zMkZPM0TSMyRM/5u3NT+SW1TNcrFiiblXsveSVAsUKyPSz5rORF6UYny/vdV/VDD7V1EXLuFPlT/AHdn2Zpu6t5T5z/ZfxdJlNNsWjU3IBZAAAAAAAAAOd8tOQrnyOrNG2bMqq+SC6MR7vq+NehFX6ou5b/vt6DtOKae6v8Al9J6fqydb2dFzeqj946tMZp10LlirInxyN+bm4Hp2scbHDxXGVqreHMX+zKon+nl7Slpygpus5O2NxHwt3oqcBf9v5Nf03Wd3bhwt3ocBf8AyTX9N1nd24cLd6HAX/yTX9N1nd24cLd6HAX/AMk1/TdZ3duHC3ehwF/8k1/TdZ3duHC3ehwF/wDJNf03Wd3bhwt3ocBf/JNf03Wd3bhwt3ocBf8AyTX9N1nd24cLd6HAX/yTX9N1nd24cLd6HAX/AMk1/TdZ3duHC3ehwF/8k1/TdZ3duHC3ehwF/wDJNf03Wd3bhwt3ocBf/JNf03Wd3bhwt3ocBf8AyTX9N1nd24cLd6HAX/yTX9N1nd24cLd6HAX/AMk1/TdZ3duHC3ehwF/8k1/TdZ3duHC3ehwF/wDJNf03Wd3bhwt3ocBf/JF0/TdZ3duHC3ehwF/2/lEn5RI5cFNG5713NxJdVX8MTepJGlxje5O0LNns2qZ/qnf2hZaE5Nve9Kiv6b3bCtlVftj+iJ/x/f7GZre1Kaae6sfz/wBOl0fZkUbTXHKPp/22859tJNJFdUA2OjjsiASgAAAAAAAAGFQCq0toqOdtpWMlT6JIxr0TsuSUXa7c70Tt+j5qopq5TDVqjklSoq/7Ef6IqJ+yFmO0dVH/ADlFw1n0oy8mKXgR+L1PfEtV65ecLZ9LGzNLwI/F6jxLVeuThbPpNmaXgR+L1HiWq9cnC2fSbM0vAj8XqPEtV65OFs+k2ZpeBH4vUeJar1ycLZ9JszS8CPxeo8S1Xrk4Wz6TZml4Efi9R4lqvXJwtn0mzNLwI/F6jxLVeuThbPpNmaXgR+L1HiWq9cnC2fSbM0vAj8XqPEtV65OFs+k2ZpeBH4vUeJar1ycLZ9JszS8CPxeo8S1Xrk4Wz6TZml4Efi9R4lqvXJwtn0mzNLwI/F6jxLVeuThbPpNmaXgR+L1HiWq9cnC2fSbM0vAj8XqPEtV65OFs+k2ZpeBH4vUeJar1ycLZ9JszS8CPxeo8S1Xrk4Wz6ROTVLwI/wBlU88S1Xrl7wtn0p1LQRwpaGNkSfXLY1l+2xXuXrlz/fVM/qkpt00/7YfdGKRPt94aZVAuKKksBaNSwGQAAAAAAAAADCpcCPLTIoEV+j0A8auQBq5AGrkAauQBq5AGrkAauQBq5AGrkAauQBq5AGrkAauQBq5AGrkAauQBq5AGrkAauQD03R6ASoqREAkNbYD0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q=="></td>
+		</tr>
+		<tr>
+		<td>라디오 버튼</td>
+		<td>
+		<input type=radio name=sex>남자
+		<input type=radio name=sex>여자
+		</td>
+		</tr>
+		<tr>
+		<td>체크박스</td>
+		<td>
+		<input type=checkbox name=hobby>낚시
+		<input type=checkbox name=hobby>등산
+		<input type=checkbox name=hobby>게임
+		</td>
+		</tr>
+		<tr>
+		<td>Spinner 버튼</td>
+		<td><input type=number max="100" min="1"></td>
+		</tr>
+		</tr>
+		<tr>
+		<td>슬라이더</td>
+		<td><input type="range" max="100" min="1"></td>
+		</tr>
+		</tr>
+		<tr>
+		<td>콤보박스</td>
+		<td>
+		<select>
+		 <option>이름</option>
+		 <option>제목</option>
+		 <option>내용</option>
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<td>멀티라인</td>
+		<td>
+		 <textarea ros="3" cols="35"></textarea>
+		</td>
+		</tr>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

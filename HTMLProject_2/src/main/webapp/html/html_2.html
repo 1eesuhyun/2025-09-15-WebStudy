@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <!-- 
+  멀티미디어 / 목록
+  | <img>(이미지 출력) <embed>(동영상 출력) <iframe>(include) => <jsp:include page="">
+   => 파일 설정 : src
+   => 크기 : width/height
+   => 파일 경로
+   
+   html
+    = html_1.html
+     ../image/a.jpg
+   image
+    = a.jpg
+   html
+    = html_1.html
+    image
+      = a.jpg
+     ./image/a.jpg
+     - 현재 폴더
+    html
+     = html_1.html
+     = a.jpg
+     
+     a.jpg
+     
+    html
+     board
+      = a.jsp
+     image
+      = a.jpg
+     ../../image/a.jpg
+  http://localhost:8080/HTMLProject_2/html/m1.jpg
+  -->
+  <img src="../../image/m1.jpg" width=650 height=750>
+  
+</body>
+</html>
