@@ -1,0 +1,112 @@
+<!-- 
+  선택자의 종류
+  1) 전체 선택자 : * => margin / padding / font
+    ex)
+          * {
+               font-family : 맑은 고딕, 궁서체
+          }
+  2) 태그 선택자 : 태그명
+     예)
+         h1{
+              color: red;
+              background:yellow
+         }
+  3) ID 선택자 : <h1 id=""> : 한 개의 태그에만 적용
+     ex)
+         #id명 {
+           속성 : 값
+         }
+  4) class 선택자 :  <h1 class+""> : 여러개 태그에 적용
+     예)
+           .class명 {
+              속성 : 값
+           }
+  5) 속성 선택자 : 모든 태그에 적용 => img, a, input
+     선택자[속성=값]****
+     ex)
+         input[type=text] => text일때
+         input[type=button] => button일때
+         input[type=submit] => submit일때
+     선택자[속성*=값]**** => contains
+        <img src="http://localhost/~">
+        <img src="http:s//localhost/~">
+        <img src="https://211.238.142.124/~">
+        img[src*=localhost]
+        => 포함
+     선택자[속성^=값]**** => startswidth
+        <img src="http://localhost/~">
+        <img src="http:s//localhost/~">
+        <img src="https://211.238.142.124/~">
+        img[src^=http] -> http로 시작
+     선택자[속성$=값]**** => endswidth
+     <img src="http://localhost/~">
+        <img src="http:s//localhost/~">
+        <img src="https://211.238.142.124/c.jpg">
+        img[src=$=jpg] -> http로 시작
+     선택자[속성!=값]
+      input[type=text] => texd일때
+      input[type=button] => button일때
+      input[type=submit] => submit일때
+      input[type!=text]
+      
+      
+     <div>
+      <p></p>
+      <h1></h1>
+      <span>
+       <h1></h1>
+      </span>
+     </div>
+     
+        div => 트리 형태로 저장(DOM)
+        ---
+         |
+  -------------------
+  |     |     |     |
+  p     h1    h1   span ==> 자손
+                    |
+                    h1 ==> 후손
+   6) 후손 선택자
+      div span h1 => div#id span.class명 h1
+   7) 자손 선택자
+      div > h1   div > span
+   8) 반응 선택자
+       :hover(a, img, tr..)
+   9) 상태 선택자
+          선택자 : checked => 체크박스 / 라디오버튼 ***
+             => 쿠키
+          선택자 : enabled / disabled
+             => button / text(아아디 체크)
+   10) 구조 선택자
+        ------------
+        first_child
+        last_child
+        ---------- 메뉴 제작
+        nth-child(수열)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ img:hover{
+  opacity: 0.3;
+ }
+ a{
+  color:black;
+  text-decoration: none;
+ }
+ a:hover{
+   color:green;
+   text-decoration: underline;
+ }
+</style>
+</head>
+<body>
+ <img src="m1.jpg">
+ <img src="m2.jpg">
+ <img src="m3.jpg"><p>
+ <a href="#">전성환</a>
+</body>
+</html>

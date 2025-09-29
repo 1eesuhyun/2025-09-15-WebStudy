@@ -1,0 +1,61 @@
+<!-- 
+  태그 ==> 1번째  태그명{}
+  ID명 ==> 2번째 #id명{} => 파일에 중복이 없는 태그 구분자
+               태그명#id명{} <- 정석
+               ---------- 파일
+  class명 ==> 3번째
+  
+  class A
+  {
+  }
+  class B
+  {
+  } 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ h1 {
+  color:gray;
+ }
+ h1.blue {
+  color:blue;
+ }
+ h1.gray{
+  color:purple;
+ }
+ a.blue{
+  color:red;
+ }
+ #yellow{
+  color:yellow;
+ }
+ #green{
+  color:green;
+ }
+ #pink{
+  color:pink;
+ }
+</style>
+</head>
+<body>
+	<h1 class="blue">Java</h1>
+	<h1 class="blue">Oracle</h1>
+	<h1 class="blue">HTML5</h1>
+	<h1 class="blue">CSS</h1>
+	<h1 class="gray">JavaScrpit</h1>
+	<h1 >Jquery(Ajax)</h1>
+	<h1 >Servlet/JSP</h1>
+	<h1 >SpringFramework</h1>
+	<h1 >SpringBoot</h1>
+	<hr>
+	<h1 id="yellow">CI/CD</h1>
+	<h1 id="pink">MyBatis/JPA</h1>
+	<h1 id="green">VueJS/React</h1>
+	<a href="" class="blue">Test</a>
+</body>
+</html>
